@@ -19,7 +19,7 @@
 //                          ----------------------------------- 
 
                         bindings = <
-   &lt 3 ESC         &kp Q    &kp W    &kp E    &kp R          &kp T                      &kp Y        &kp U            &kp I                &kp O   &kp P    &lt 4 BSPC
+   &lt 4 ESC         &kp Q    &kp W    &kp E    &kp R          &kp T                      &kp Y        &kp U            &kp I                &kp O   &kp P    &lt 4 BSPC
    &mt LSHIFT TAB    &kp A    &kp S    &kp D    &kp F          &kp G                      &kp H        &kp J            &kp K                &kp L   &kp SEMI &kp SQT
    &kp LCTRL         &kp Z    &kp X    &kp C    &kp V          &kp B                      &kp N        &kp M            &kp COMMA            &kp DOT &kp FSLH &kp RSHFT
                                                 &kp LGUI       &kp LALT    &lt 1 SPACE    &lt 2 RET    &lt 3 K_CONTEXT_MENU
@@ -70,24 +70,46 @@
 //template_layer BEGIN
                 template_layer {
 // --------------------------------------         --------------------------------------
-// | ESC  |     |     |     |     |     |         |     |     |     |     |     |   BS |
+// | ESC  |  !  |  @  |  #  |  $  |  %  |         |  +  |  `  |  (  |  )  |  *  | BKSP |
 // --------------------------------------         --------------------------------------
-// |TAB/SH|     |     |     |     |     |         |     |     |     |     |     |  DEL |
+// |TAB/SH|     |     |     |     |     |         |  -  |  ~  |  [  |  ]  |  \  | DEL  |
 // --------------------------------------         --------------------------------------
-// | CTRL |     |     |     |     |     |         |     |     |     |     |     | MENU |
+// | CTRL |     |     |     |     |     |         |  |  |  _  |  {  |  }  |  =  |      |
 // -------------------------------------------------------------------------------------
 //                          | WIN | ALT |   SB    | RET |SHFT |
-//                          ----------------------------------- 
+//                          -----------------------------------
+
 
                         bindings = <
-   &kp ESC           &none    &none    &none    &none       &none                      &none       &none    &none    &none       &none    &lt 4 BSPC
-   &mt LSHIFT TAB    &none    &none    &none    &none       &none                      &none       &none    &none    &none       &none    &kp SQT
-   &kp LCTRL         &none    &none    &none    &none       &none                      &none       &none    &none    &none       &none    &kp RSHFT
-                                                &kp LGUI    &kp LALT    &kp SPACE      &kp RET     &kp K_CONTEXT_MENU
+   &kp ESC           &none    &none    &none    &none       &none                      &kp PLUS  &kp GRAVE &kp LPAR &kp RPAR &kp STAR  &kp BSPC
+   &mt LSHIFT TAB    &none    &none    &none    &none       &none                      &kp MINUS &kp TILDE &kp LBKT &kp RBKT &kp BSLH  &kp DEL
+   &kp LCTRL         &none    &none    &none    &none       &none                      &kp PIPE  &kp UNDER &kp LBRC &kp RBRC &kp EQUAL &kp RSHIFT
+                                                &kp LGUI    &kp LALT    &kp SPACE      &kp RET   &kp K_CONTEXT_MENU
                         >;
                 };
 //LAYER ENDS
 //template_layer BEGIN
+                template_layer {
+// --------------------------------------         --------------------------------------
+// |      | F1  | F2  | F3  | F4  | ADJ |         |     |     |     |     |     |      |
+// --------------------------------------         --------------------------------------
+// |TAB/SH| F5  | F6  | F7  | F8  |     |         |     |     |     |     |     | SHFT |
+// --------------------------------------         --------------------------------------
+// | CTRL | F9  | F10 | F11 | F12 |     |         |     |     |     |     |     | CTRL |
+// --------------------------------------         --------------------------------------
+//                          | WIN | ALT |   SB    | RET |SHFT |
+//                          -----------------------------------
+
+
+                        bindings = <
+   &none            &kp F1   &kp F2    &kp F3    &kp F4    &mo 5             &none &none &none &none &none &none
+   &mt LSHIFT TAB   &kp F5   &kp F6    &kp F7    &kp F8    &none             &none &none &none &none &none &kp DEL
+   &kp LCTRL        &kp F9   &kp F10   &kp F11   &kp F12   &none             &none &none &none &none &none &kp RSHIFT
+                                                &kp LGUI    &kp LALT    &kp SPACE      &kp RET   &kp K_CONTEXT_MENU
+                        >;
+                };
+//LAYER ENDS
+//ADJUST BEGIN
 
                 adjust_layer {
 // --------------------------------------         --------------------------------------
@@ -106,7 +128,7 @@
                                &none  &none    &none    &none        &none
                         >;
                 };
-//template_layer BEGIN
+//ADJUST ENDS
         };
 };
 
