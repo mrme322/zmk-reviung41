@@ -10,7 +10,7 @@
             key-positions = <21 22>;
             bindings = <&kp BSPC>;
         };
-    };j
+    };
         keymap {
                 compatible = "zmk,keymap";
 
