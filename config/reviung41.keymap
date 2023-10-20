@@ -89,7 +89,7 @@
 
 
                         bindings = <
-   &kp ESC           &none    &none    &none    &none       &none                      &kp PLUS  &kp GRAVE &kp LPAR &kp RPAR &kp STAR  &kp BSPC
+   &kp ESC           &kp EXCL &kp AT   &kp HASH &kp DLLR    &kp PRCNT                  &kp PLUS  &kp GRAVE &kp LPAR &kp RPAR &kp STAR  &kp BSPC
    &mt LSHIFT TAB    &none    &none    &none    &none       &none                      &kp MINUS &kp TILDE &kp LBKT &kp RBKT &kp BSLH  &kp DEL
    &kp LCTRL         &none    &none    &none    &none       &none                      &kp PIPE  &kp UNDER &kp LBRC &kp RBRC &kp EQUAL &kp RSHIFT
                                                 &kp LGUI    &kp LALT    &kp SPACE      &kp RET   &kp K_CONTEXT_MENU
