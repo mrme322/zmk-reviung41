@@ -1,6 +1,7 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/mouse.h>
 
 / {
     combos {
@@ -73,7 +74,7 @@
             //                          ----------------------------------- 
 
             bindings = <
-&kp ESC         &none  &none  &none     &none     &kp DEL                  &kp PLUS   &kp N7   &kp N8              &kp N9  &kp STAR   &kp BSPC
+&kp ESC         &none  &none  &none     &mkp MB1  &kp DEL                  &kp PLUS   &kp N7   &kp N8              &kp N9  &kp STAR   &kp BSPC
 &mt LSHIFT TAB  &none  &none  &none     &none     &kp QUESTION             &kp MINUS  &kp N4   &kp N5              &kp N6  &kp SLASH  &kp DEL
 &kp LCTRL       &none  &none  &none     &none     &none                    &kp N0     &kp N1   &kp N2              &kp N3  &kp EQUAL  &kp RET
                               &kp LGUI  &kp LALT                &kp SPACE             &kp DOT  &kp K_CONTEXT_MENU
@@ -162,7 +163,7 @@
 
             bindings = <
 &none  &none  &none  &none  &none  &none               &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &bt BT_CLR
-&none  &none  &none  &none  &none  &none               &studio_unlock         &none         &none         &none         &none         &none
+&none  &none  &none  &none  &none  &none               &none         &none         &none         &none         &none         &none
 &none  &none  &none  &none  &none  &none               &none         &none         &none         &none         &none         &bootloader
                      &none  &none         &bootloader                &none         &none
             >;
