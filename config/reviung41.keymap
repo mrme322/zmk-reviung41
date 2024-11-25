@@ -12,25 +12,14 @@
             bindings = <&kp BSPC>;
         };
 
-        tabshift {
-            bindings = <&mt LEFT_SHIFT TAB>;
-            key-positions = <13 14>;
-            timeout-ms = <50>;
-            require-prior-idle-ms = <50>;
+        shift1 {
+            bindings = <&sk LEFT_SHIFT>;
+            key-positions = <15 16>;
         };
 
-        test {
-            bindings = <&qnent>;
-            key-positions = <16 15>;
-        };
-    };
-
-    macros {
-        qnent: qnent {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp QUESTION &kp ENTER>;
-            label = "QNENT";
+        shift2 {
+            bindings = <&sk LEFT_SHIFT>;
+            key-positions = <19 20>;
         };
     };
 
