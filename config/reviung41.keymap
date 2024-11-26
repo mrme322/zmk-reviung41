@@ -62,10 +62,10 @@
             //                          ----------------------------------- 
 
             bindings = <
-&kp LA(F4)  &kp LC(A)  &none      &kp LS(LG(S))  &kp DEL    &none         &kp PLUS   &kp N7   &kp N8              &kp N9  &kp STAR   &kp BSPC
-&none       &kp LC(A)  &kp LC(X)  &kp LC(C)      &kp LC(V)  &none         &kp MINUS  &kp N4   &kp N5              &kp N6  &kp SLASH  &kp DEL
-&kp LCTRL   &kp LC(Z)  &none      &none          &none      &none         &kp N0     &kp N1   &kp N2              &kp N3  &kp EQUAL  &kp RET
-                                  &kp LGUI       &kp LALT          &none             &kp DOT  &kp K_CONTEXT_MENU
+&kp LA(F4)  &kp LC(RC(A))  &none      &kp LS(LG(S))  &kp DEL    &none         &kp PLUS   &kp N7   &kp N8              &kp N9  &kp STAR   &kp BSPC
+&none       &kp LC(RC(A))  &kp LC(X)  &kp LC(C)      &kp LC(V)  &none         &kp MINUS  &kp N4   &kp N5              &kp N6  &kp SLASH  &kp DEL
+&kp LCTRL   &kp LC(Z)      &none      &none          &none      &none         &kp N0     &kp N1   &kp N2              &kp N3  &kp EQUAL  &kp RET
+                                      &kp LGUI       &kp LALT          &none             &kp DOT  &kp K_CONTEXT_MENU
             >;
         };
 
