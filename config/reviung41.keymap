@@ -40,17 +40,14 @@
             //                          ----------------------------------- 
 
             bindings = <
-&lt 4 ESC         &kp Q  &kp W  &kp E     &kp R              &kp T               &kp Y  &kp U      &kp I                 &kp O    &kp P     &kp BACKSPACE
+&lt 5 ESC         &kp Q  &kp W  &kp E     &kp R              &kp T               &kp Y  &kp U      &kp I                 &kp O    &kp P     &kp BACKSPACE
 &mt LSHIFT TAB    &kp A  &kp S  &kp D     &kp F              &kp G               &kp H  &kp J      &kp K                 &kp L    &kp SEMI  &kp SQT
 &kp LEFT_CONTROL  &kp Z  &kp X  &kp C     &kp V              &kp B               &kp N  &kp M      &kp COMMA             &kp DOT  &kp FSLH  &kp RSHFT
-                                &kp LGUI  &mt LALT QUESTION         &lt 1 SPACE         &lt 2 RET  &lt 3 K_CONTEXT_MENU
+                                &kp LGUI  &mt LALT QUESTION         &lt 1 SPACE         &lt 3 RET  &lt 4 K_CONTEXT_MENU
             >;
         };
 
-        //LAYER ENDS
-        //space_layer BEGIN
-
-        space_layer {
+        spaceLayerWindows {
             // --------------------------------------         --------------------------------------
             // | ESC  |     |     |     |     |     |         |  +  |  7  |  8  |  9  |  *  | BKSP |
             // --------------------------------------         --------------------------------------
@@ -62,15 +59,21 @@
             //                          ----------------------------------- 
 
             bindings = <
-&kp LA(F4)  &none      &none      &kp LS(LG(S))  &kp DEL    &none         &kp PLUS   &kp N7   &kp N8              &kp N9  &kp STAR   &kp BSPC
-&none       &kp LC(A)  &kp LC(X)  &kp LC(C)      &kp LC(V)  &none         &kp MINUS  &kp N4   &kp N5              &kp N6  &kp SLASH  &kp DEL
-&kp LCTRL   &kp LC(Z)  &none      &none          &none      &none         &kp N0     &kp N1   &kp N2              &kp N3  &kp EQUAL  &kp RET
-                                  &kp LGUI       &kp LALT          &none             &kp DOT  &kp K_CONTEXT_MENU
+&none      &none      &none      &kp LS(LG(S))  &kp DEL            &none         &kp PLUS   &kp N7   &kp N8              &kp N9  &kp STAR   &kp BSPC
+&none      &kp LC(A)  &kp LC(X)  &kp LC(C)      &kp LC(V)          &none         &kp MINUS  &kp N4   &kp N5              &kp N6  &kp SLASH  &kp DEL
+&kp LCTRL  &kp LC(Z)  &none      &none          &none              &none         &kp N0     &kp N1   &kp N2              &kp N3  &kp EQUAL  &kp RET
+                                 &kp LGUI       &mt LALT QUESTION         &none             &kp DOT  &kp K_CONTEXT_MENU
             >;
         };
 
-        //LAYER ENDS
-        //ent_layer BEGIN
+        spaceLayerIpad {
+            bindings = <
+&none      &none      &none      &kp LS(LG(S))  &kp DEL            &none         &kp PLUS   &kp N7   &kp N8              &kp N9  &kp STAR   &kp BSPC
+&none      &kp LC(A)  &kp LC(X)  &kp LC(C)      &kp LC(V)          &none         &kp MINUS  &kp N4   &kp N5              &kp N6  &kp SLASH  &kp DEL
+&kp LCTRL  &kp LC(Z)  &none      &none          &none              &none         &kp N0     &kp N1   &kp N2              &kp N3  &kp EQUAL  &kp RET
+                                 &kp LGUI       &mt LALT QUESTION         &none             &kp DOT  &kp K_CONTEXT_MENU
+            >;
+        };
 
         ent_layer {
             // --------------------------------------         --------------------------------------
@@ -91,9 +94,6 @@
             >;
         };
 
-        //LAYER ENDS
-        //menu_layer BEGIN
-
         menu_layer {
             // --------------------------------------         --------------------------------------
             // | ESC  |  !  |  @  |  #  |  $  |  %  |         |  +  |  `  |  (  |  )  |  *  | BKSP |
@@ -113,9 +113,6 @@
             >;
         };
 
-        //LAYER ENDS
-        //esc_layer BEGIN
-
         esc_layer {
             // --------------------------------------         --------------------------------------
             // |      | F1  | F2  | F3  | F4  | ADJ |         |     |     |     |     |     |      |
@@ -128,15 +125,12 @@
             //                          -----------------------------------
 
             bindings = <
-&none           &kp F1  &kp F2   &kp F3    &kp F4    &mo 5             &none  &none    &none               &none  &none  &none
+&none           &kp F1  &kp F2   &kp F3    &kp F4    &mo 6             &none  &none    &none               &none  &none  &none
 &mt LSHIFT TAB  &kp F5  &kp F6   &kp F7    &kp F8    &none             &none  &none    &none               &none  &none  &kp DEL
 &kp LCTRL       &kp F9  &kp F10  &kp F11   &kp F12   &none             &none  &none    &none               &none  &none  &kp RSHIFT
                                  &kp LGUI  &kp LALT         &kp SPACE         &kp RET  &kp K_CONTEXT_MENU
             >;
         };
-
-        //LAYER ENDS
-        //ADJUST BEGIN
 
         adjust_layer {
             // --------------------------------------         --------------------------------------
