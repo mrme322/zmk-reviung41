@@ -79,10 +79,10 @@
             //                          ----------------------------------- 
 
             bindings = <
-&lt 6 ESC         &kp Q  &kp W  &kp E     &kp R              &kp T               &kp Y  &kp U      &kp I                 &kp O    &kp P     &kp BACKSPACE
-&mt LSHIFT TAB    &kp A  &kp S  &kp D     &kp F              &kp G               &kp H  &kp J      &kp K                 &kp L    &kp SEMI  &kp SQT
-&kp LEFT_CONTROL  &kp Z  &kp X  &kp C     &kp V              &kp B               &kp N  &kp M      &kp COMMA             &kp DOT  &kp FSLH  &kp RSHFT
-                                &kp LGUI  &mt LALT QUESTION         &lt 2 SPACE         &lt 4 RET  &lt 5 K_CONTEXT_MENU
+&lt 6 ESC         &kp Q              &kp W         &kp E            &kp R              &kp T               &kp Y  &kp U      &kp I                 &kp O    &kp P     &kp BACKSPACE
+&mt LSHIFT TAB    &hml A LEFT_SHIFT  &hml S RCTRL  &hml LEFT_ALT D  &hml LEFT_GUI F    &kp G               &kp H  &kp J      &kp K                 &kp L    &kp SEMI  &kp SQT
+&kp LEFT_CONTROL  &kp Z              &kp X         &kp C            &kp V              &kp B               &kp N  &kp M      &kp COMMA             &kp DOT  &kp FSLH  &kp RSHFT
+                                                   &kp LGUI         &mt LALT QUESTION         &lt 2 SPACE         &lt 4 RET  &lt 5 K_CONTEXT_MENU
             >;
         };
 
