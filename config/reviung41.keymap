@@ -1,244 +1,121 @@
+#undef ZMK_BEHAVIORS_KEEP_ALL
+
+#define ZMK_BEHAVIORS_KEEP_SK
+#define ZMK_BEHAVIORS_KEEP_MT
+#define ZMK_BEHAVIORS_KEEP_KT
+
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/outputs.h>
 
+&sk {
+    quick-release;
+    release-after-ms = <600>;
+};
+
 / {
     combos {
         compatible = "zmk,combos";
 
-        combo_esc {
-            timeout-ms = <50>;
-            key-positions = <21 22>;
-            bindings = <&kp BSPC>;
-        };
-
         shift1 {
             bindings = <&sk LEFT_SHIFT>;
             key-positions = <15 16>;
+            timeout-ms = <50>;
         };
 
         shift2 {
             bindings = <&sk LEFT_SHIFT>;
             key-positions = <19 20>;
+            timeout-ms = <50>;
+        };
+
+        ipadLayer {
+            bindings = <&mo 2>;
+            key-positions = <37 39>;
         };
     };
 
     macros {
-        B0Windows: B0Windows {
+        ipadBT: ipadBT {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&bt BT_SEL 1 &to 0>;
+            label = "IPADBT";
+        };
+
+        windowsBT: windowsBT {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&bt BT_SEL 0 &to 0>;
-            label = "B0WINDOWS";
-        };
-
-        B1Ipad: BT1IPAD {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&bt BT_SEL 1 &to 1>;
-            label = "BT1IPAD";
-        };
-    };
-
-    behaviors {
-        hml: homewrow_mods_left {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            label = "HOMEROW_MODS_LEFT_HAND";
-            bindings = <&kp>, <&kp>;
-
-            tapping-term-ms = <200>;
-            hold-trigger-key-positions = <6 7 8 9 10 11 18 19 20 21 22 23 30 31 32 33 34 35 39 40 41>;
-        };
-
-        hmr: homewrow_mods_right {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            label = "HOMEROW_MODS_RIGHT_HAND";
-            bindings = <&kp>, <&kp>;
-
-            tapping-term-ms = <200>;
-            hold-trigger-key-positions = <0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 36 37 38>;
+            label = "WINDOWSBT";
         };
     };
 
     keymap {
         compatible = "zmk,keymap";
 
-        //default_layer BEGIN
-
-        defaultWindows {
-            // --------------------------------------         --------------------------------------
-            // | ESC  |  Q  |  W  |  E  |  R  |  T  |         |  Y  |  U  |  I  |  O  |  P  |  BS  |
-            // --------------------------------------         --------------------------------------
-            // |TAB/SH|  A  |  S  |  D  |  F  |  G  |         |  H  |  J  |  K  |  L  |  ;  |  '   |
-            // --------------------------------------         --------------------------------------
-            // | CTRL |  Z  |  X  |  C  |  V  |  B  |         |  N  |  M  |  ,  |  .  |  /  | MENU |
-            // -------------------------------------------------------------------------------------
-            //                          | WIN | ALT |   SB    | RET |SHFT |
-            //                          ----------------------------------- 
-
+        default {
             bindings = <
-&lt 6 ESC         &kp Q              &kp W                &kp E            &kp R              &kp T               &kp Y  &kp U            &kp I                 &kp O                &kp P                      &kp BACKSPACE
-&mt LSHIFT TAB    &hml LEFT_SHIFT A  &hml LEFT_CONTROL S  &hml LEFT_ALT D  &hml LEFT_GUI F    &kp G               &kp H  &hmr LEFT_GUI J  &hmr LEFT_ALT K       &hmr LEFT_CONTROL L  &hmr LEFT_SHIFT SEMICOLON  &kp SQT
-&kp LEFT_CONTROL  &kp Z              &kp X                &kp C            &kp V              &kp B               &kp N  &kp M            &kp COMMA             &kp DOT              &kp FSLH                   &kp RSHFT
-                                                          &kp LGUI         &mt LALT QUESTION         &lt 2 SPACE         &lt 4 RET        &lt 5 K_CONTEXT_MENU
+&lt 5 ESC       &kp Q  &kp W  &kp E     &kp R              &kp T               &kp Y  &kp U        &kp I                 &kp O    &kp P     &kp BACKSPACE
+&mt LSHIFT TAB  &kp A  &kp S  &kp D     &kp F              &kp G               &kp H  &kp J        &kp K                 &kp L    &kp SEMI  &kp SQT
+&kp LCTRL       &kp Z  &kp X  &kp C     &kp V              &kp B               &kp N  &kp M        &kp COMMA             &kp DOT  &kp FSLH  &kp RSHFT
+                              &kp LGUI  &mt LALT QUESTION         &lt 1 SPACE         &lt 3 ENTER  &lt 4 K_CONTEXT_MENU
             >;
         };
 
-        defaultIpad {
+        spaceWindows {
             bindings = <
-&lt 6 ESC         &kp Q              &kp W                &kp E            &kp R              &kp T               &kp Y  &kp U            &kp I                 &kp O                &kp P                      &kp BACKSPACE
-&mt LSHIFT TAB    &hml LEFT_SHIFT A  &hml LEFT_CONTROL S  &hml LEFT_ALT D  &hml LEFT_GUI F    &kp G               &kp H  &hmr LEFT_GUI J  &hmr LEFT_ALT K       &hmr LEFT_CONTROL L  &hmr LEFT_SHIFT SEMICOLON  &kp SQT
-&kp LEFT_CONTROL  &kp Z              &kp X                &kp C            &kp V              &kp B               &kp N  &kp M            &kp COMMA             &kp DOT              &kp FSLH                   &kp RSHFT
-                                                          &kp LGUI         &mt LALT QUESTION         &lt 3 SPACE         &lt 4 RET        &lt 5 K_CONTEXT_MENU
+&kp ESCAPE      &none      &none      &kp LS(LG(S))  &kp DEL            &none             &kp PLUS   &kp N7     &kp N8              &kp N9  &kp STAR   &kp BSPC
+&mt LSHIFT TAB  &kp LC(A)  &kp LC(X)  &kp LC(C)      &kp LC(V)          &none             &kp MINUS  &kp N4     &kp N5              &kp N6  &kp SLASH  &kp DEL
+&kp LCTRL       &kp LC(Z)  &none      &none          &kp LG(D)          &none             &kp N0     &kp N1     &kp N2              &kp N3  &kp EQUAL  &kp RET
+                                      &kp LGUI       &mt LALT QUESTION         &kp SPACE             &kp ENTER  &kp K_CONTEXT_MENU
             >;
         };
 
-        spaceLayerWindows {
-            // --------------------------------------         --------------------------------------
-            // | ESC  |     |     |     |     |     |         |  +  |  7  |  8  |  9  |  *  | BKSP |
-            // --------------------------------------         --------------------------------------
-            // |TAB/SH|     |     |     |     |     |         |  -  |  4  |  5  |  6  |  /  | DEL  |
-            // --------------------------------------         --------------------------------------
-            // | CTRL |     |     |     |     |     |         |  0  |  1  |  2  |  3  |  =  | RET  |
-            // -------------------------------------------------------------------------------------
-            //                          | WIN | ALT |   SB    |  .  |SHFT |
-            //                          ----------------------------------- 
-
+        spaceIpad {
             bindings = <
-&none               &none      &none      &kp LS(LG(S))  &kp DEL            &none         &kp PLUS   &kp N7   &kp N8              &kp N9  &kp STAR   &kp BSPC
-&mt LEFT_SHIFT TAB  &kp LC(A)  &kp LC(X)  &kp LC(C)      &kp LC(V)          &none         &kp MINUS  &kp N4   &kp N5              &kp N6  &kp SLASH  &kp DEL
-&kp LCTRL           &kp LC(Z)  &none      &none          &none              &none         &kp N0     &kp N1   &kp N2              &kp N3  &kp EQUAL  &kp RET
-                                          &kp LGUI       &mt LALT QUESTION         &none             &kp DOT  &kp K_CONTEXT_MENU
+&kp ESCAPE      &none      &none      &kp LC(LG(NUMBER_4))  &kp DEL            &none             &kp PLUS   &kp N7     &kp N8              &kp N9  &kp STAR   &kp BSPC
+&mt LSHIFT TAB  &kp LG(A)  &kp LG(X)  &kp LG(C)             &kp LG(V)          &none             &kp MINUS  &kp N4     &kp N5              &kp N6  &kp SLASH  &kp DEL
+&kp LCTRL       &kp LG(Z)  &none      &none                 &kp LG(H)          &none             &kp N0     &kp N1     &kp N2              &kp N3  &kp EQUAL  &kp RET
+                                      &kp LGUI              &mt LALT QUESTION         &kp SPACE             &kp ENTER  &kp K_CONTEXT_MENU
             >;
         };
 
-        spaceLayerIpad {
+        introLayer {
             bindings = <
-&none               &none      &none      &kp LS(LG(NUMBER_4))  &kp DEL            &none         &kp PLUS   &kp N7   &kp N8              &kp N9  &kp STAR   &kp BSPC
-&mt LEFT_SHIFT TAB  &kp LG(A)  &kp LG(X)  &kp LG(C)             &kp LG(V)          &none         &kp MINUS  &kp N4   &kp N5              &kp N6  &kp SLASH  &kp DEL
-&kp LCTRL           &kp LG(Z)  &none      &none                 &none              &none         &kp N0     &kp N1   &kp N2              &kp N3  &kp EQUAL  &kp RET
-                                          &kp LGUI              &mt LALT QUESTION         &none             &kp DOT  &kp K_CONTEXT_MENU
+&kp ESCAPE      &none  &none  &none     &none              &none             &kp C_VOL_UP  &kp PG_UP   &kp UP              &kp PG_DN   &kp C_MUTE  &kp BSPC
+&mt LSHIFT TAB  &none  &none  &none     &none              &none             &kp HOME      &kp LEFT    &kp DOWN            &kp RIGHT   &kp END     &kp DEL
+&kp LCTRL       &none  &none  &none     &none              &none             &kp C_VOL_DN  &kp C_PREV  &kp C_PLAY          &kp C_NEXT  &kp RCTRL   &kp RSHIFT
+                              &kp LGUI  &mt LALT QUESTION         &kp SPACE                &kp ENTER   &kp K_CONTEXT_MENU
             >;
         };
 
-        ent_layer {
-            // --------------------------------------         --------------------------------------
-            // | ESC  |     |     |     |     |     |         | VU  | PU  |  ↑  | PD  | MUTE | BKSP |
-            // --------------------------------------         --------------------------------------
-            // |TAB/SH|     |     |     |     |     |         | HOME|  ←  |  ↓  |  →  | END  | DEL  |
-            // --------------------------------------         --------------------------------------
-            // | CTRL |     |     |     |     |     |         | VD  | PRE |  PP | NXT | CTRL | SHFT |
-            // -------------------------------------------------------------------------------------
-            //                          | WIN | ALT |   SB    | RET |SHFT |
-            //                          ----------------------------------- 
-
+        menuLayer {
             bindings = <
-&kp ESC         &none  &none  &none     &none     &none             &kp C_VOL_UP  &kp PG_UP   &kp UP              &kp PG_DN   &kp C_MUTE  &kp BSPC
-&mt LSHIFT TAB  &none  &none  &none     &none     &none             &kp HOME      &kp LEFT    &kp DOWN            &kp RIGHT   &kp END     &kp DEL
-&kp LCTRL       &none  &none  &none     &none     &none             &kp C_VOL_DN  &kp C_PREV  &kp C_PP            &kp C_NEXT  &kp RCTRL   &kp RSHIFT
-                              &kp LGUI  &kp LALT         &kp SPACE                &kp RET     &kp K_CONTEXT_MENU
+&kp ESC             &kp EXCL   &kp AT    &kp HASH       &kp DLLR           &kp PRCNT             &kp PLUS   &kp GRAVE  &kp LPAR            &kp RPAR  &kp STAR   &kp BSPC
+&mt LEFT_SHIFT TAB  &kp CARET  &kp AMPS  &kp BACKSLASH  &none              &none                 &kp MINUS  &kp TILDE  &kp LBKT            &kp RBKT  &kp SLASH  &kp DEL
+&kp LCTRL           &none      &none     &none          &none              &none                 &kp PIPE   &kp UNDER  &kp LBRC            &kp RBRC  &kp EQUAL  &kp ENTER
+                                         &kp LGUI       &mt LALT QUESTION             &kp SPACE             &kp ENTER  &kp K_CONTEXT_MENU
             >;
         };
 
-        menu_layer {
-            // --------------------------------------         --------------------------------------
-            // | ESC  |  !  |  @  |  #  |  $  |  %  |         |  +  |  `  |  (  |  )  |  *  | BKSP |
-            // --------------------------------------         --------------------------------------
-            // |TAB/SH|     |     |     |     |     |         |  -  |  ~  |  [  |  ]  |  \  | DEL  |
-            // --------------------------------------         --------------------------------------
-            // | CTRL |     |     |     |     |     |         |  |  |  _  |  {  |  }  |  =  |      |
-            // -------------------------------------------------------------------------------------
-            //                          | WIN | ALT |   SB    | RET |SHFT |
-            //                          -----------------------------------
-
+        escLayer {
             bindings = <
-&kp ESC         &kp EXCL   &kp AT    &kp HASH       &kp DLLR  &kp PRCNT             &kp PLUS   &kp GRAVE  &kp LPAR            &kp RPAR  &kp STAR   &kp BSPC
-&mt LSHIFT TAB  &kp CARET  &kp AMPS  &kp BACKSLASH  &none     &none                 &kp MINUS  &kp TILDE  &kp LBKT            &kp RBKT  &kp SLASH  &kp DEL
-&kp LCTRL       &none      &none     &none          &none     &none                 &kp PIPE   &kp UNDER  &kp LBRC            &kp RBRC  &kp EQUAL  &kp RSHIFT
-                                     &kp LGUI       &kp LALT             &kp SPACE             &kp RET    &kp K_CONTEXT_MENU
+&none           &kp F1  &kp F2   &kp F3    &kp F4             &mo 6             &none  &none      &none               &none  &none  &none
+&mt LSHIFT TAB  &kp F5  &kp F6   &kp F7    &kp F8             &none             &none  &none      &none               &none  &none  &none
+&kp LCTRL       &kp F9  &kp F10  &kp F11   &kp F12            &none             &none  &none      &none               &none  &none  &none
+                                 &kp LGUI  &mt LALT QUESTION         &kp SPACE         &kp ENTER  &kp K_CONTEXT_MENU
             >;
         };
 
-        esc_layer {
-            // --------------------------------------         --------------------------------------
-            // |      | F1  | F2  | F3  | F4  | ADJ |         |     |     |     |     |     |      |
-            // --------------------------------------         --------------------------------------
-            // |TAB/SH| F5  | F6  | F7  | F8  |     |         |     |     |     |     |     | SHFT |
-            // --------------------------------------         --------------------------------------
-            // | CTRL | F9  | F10 | F11 | F12 |     |         |     |     |     |     |     | CTRL |
-            // --------------------------------------         --------------------------------------
-            //                          | WIN | ALT |   SB    | RET |SHFT |
-            //                          -----------------------------------
-
-            bindings = <
-&none           &kp F1  &kp F2   &kp F3    &kp F4    &mo 7             &none  &none    &none               &none  &none  &kp BACKSPACE
-&mt LSHIFT TAB  &kp F5  &kp F6   &kp F7    &kp F8    &none             &none  &none    &none               &none  &none  &kp DEL
-&kp LCTRL       &kp F9  &kp F10  &kp F11   &kp F12   &none             &none  &none    &none               &none  &none  &kp RSHIFT
-                                 &kp LGUI  &kp LALT         &kp SPACE         &kp RET  &kp K_CONTEXT_MENU
-            >;
-        };
-
-        adjust_layer {
-            // --------------------------------------         --------------------------------------
-            // | ESC  |     |     |     |     |     |         | BT1 | BT2 | BT3 | BT4 | BT5 |  CLT |
-            // --------------------------------------         --------------------------------------
-            // |TAB/SH|     |     |     |     |     |         |     |     |     |     |     |  DEL |
-            // --------------------------------------         --------------------------------------
-            // | CTRL |     |     |     |     |     |         |     |     |     |     |     | BOTL |
-            // -------------------------------------------------------------------------------------
-            //                          | WIN | ALT |   SB    | RET |SHFT |
-            //                          ----------------------------------- 
-
+        adjustLayer {
             bindings = <
 &none  &none  &none  &none           &none  &none               &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &bt BT_CLR
-&none  &none  &none  &none           &none  &none               &B0Windows    &B1Ipad       &none         &none         &none         &none
 &none  &none  &none  &none           &none  &none               &none         &none         &none         &none         &none         &none
-                     &studio_unlock  &to 1         &bootloader                &to 0         &out OUT_TOG
+&none  &none  &none  &none           &none  &none               &none         &none         &none         &none         &none         &none
+                     &studio_unlock  &none         &bootloader                &none         &out OUT_TOG
             >;
         };
-
-        //ADJUST ENDS
     };
 };
-
-/*
- usefull templates
-
-
-// --------------------------------------         --------------------------------------
-// |      |     |     |     |     |     |         |     |     |     |     |     |      |
-// --------------------------------------         --------------------------------------
-// |      |     |     |     |     |     |         |     |     |     |     |     |      |
-// --------------------------------------         --------------------------------------
-// |      |     |     |     |     |     |         |     |     |     |     |     |      |
-// -------------------------------------------------------------------------------------
-//                 |        |        |               |        |        |
-//                 -----------------------------------------------------
-
-
-//template_layer BEGIN
-                template_layer {
-// --------------------------------------         --------------------------------------
-// | ESC  |     |     |     |     |     |         |     |     |     |     |     |   BS |
-// --------------------------------------         --------------------------------------
-// |TAB/SH|     |     |     |     |     |         |     |     |     |     |     |  DEL |
-// --------------------------------------         --------------------------------------
-// | CTRL |     |     |     |     |     |         |     |     |     |     |     | MENU |
-// -------------------------------------------------------------------------------------
-//                          | WIN | ALT |   SB    | RET |SHFT |
-//                          ----------------------------------- 
-
-                        bindings = <
-   &kp ESC           &none    &none    &none    &none       &none                      &none       &none    &none    &none       &none    &lt 4 BSPC
-   &mt LSHIFT TAB    &none    &none    &none    &none       &none                      &none       &none    &none    &none       &none    &kp SQT
-   &kp LCTRL         &none    &none    &none    &none       &none                      &none       &none    &none    &none       &none    &kp RSHFT
-                                                &kp LGUI    &kp LALT    &kp SPACE      &kp RET     &kp K_CONTEXT_MENU
-                        >;
-                };
-//LAYER ENDS
-
-
-
- */
