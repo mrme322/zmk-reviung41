@@ -28,6 +28,7 @@
             key-positions = <4 3>;
             timeout-ms = <40>;
             require-prior-idle-ms = <100>;
+            layers = <0 1 3 2>;
         };
 
         delR {
