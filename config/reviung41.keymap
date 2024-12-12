@@ -35,7 +35,8 @@
             key-positions = <37 39>;
         };
     };
- behaviors {
+
+    behaviors {
         hmr: hmr {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -95,7 +96,6 @@
         };
     };
 
-
     macros {
         ipadBT: ipadBT {
             compatible = "zmk,behavior-macro";
@@ -117,62 +117,62 @@
 
         default {
             bindings = <
-&none       &kp Q  &kp W  &kp E     &kp R              &kp T               &kp Y  &kp U        &kp I                 &kp O    &kp P     &none
+&none  &kp Q  &kp W  &kp E     &kp R              &kp T               &kp Y  &kp U        &kp I                 &kp O    &kp P     &none
 &none  &kp A  &kp S  &kp D     &kp F              &kp G               &kp H  &kp J        &kp K                 &kp L    &kp SEMI  &none
-&none      &kp Z  &kp X  &kp C     &kp V              &kp B               &kp N  &kp M        &kp COMMA             &kp DOT  &kp FSLH  &none
-                              &kp LGUI  &mt LALT QUESTION         &lt 1 SPACE         &lt 3 ENTER  &lt 4 K_CONTEXT_MENU
+&none  &kp Z  &kp X  &kp C     &kp V              &kp B               &kp N  &kp M        &kp COMMA             &kp DOT  &kp FSLH  &none
+                     &kp LGUI  &mt LALT QUESTION         &lt 1 SPACE         &lt 3 ENTER  &lt 4 K_CONTEXT_MENU
             >;
         };
 
         spaceWindows {
             bindings = <
-&none       &none      &none      &kp LS(LG(S))      &kp DEL            &none             &kp PLUS   &kp N7     &kp N8              &kp N9  &kp STAR   &none
-&none   &kp LC(A)  &kp LC(X)  &kp LC(C)          &kp LC(V)          &none             &kp MINUS  &kp N4     &kp N5              &kp N6  &kp SLASH  &none
-&none        &kp LC(Z)  &none      &kp LC(BACKSPACE)  &kp LG(D)          &none             &kp N0     &kp N1     &kp N2              &kp N3  &kp EQUAL  &none
-                                      &kp LGUI           &mt LALT QUESTION         &kp SPACE             &kp ENTER  &kp K_CONTEXT_MENU
+&none  &none      &none      &kp LS(LG(S))      &kp DEL            &none             &kp PLUS   &kp N7     &kp N8              &kp N9  &kp STAR   &none
+&none  &kp LC(A)  &kp LC(X)  &kp LC(C)          &kp LC(V)          &none             &kp MINUS  &kp N4     &kp N5              &kp N6  &kp SLASH  &none
+&none  &kp LC(Z)  &none      &kp LC(BACKSPACE)  &kp LG(D)          &none             &kp N0     &kp N1     &kp N2              &kp N3  &kp EQUAL  &none
+                             &kp LGUI           &mt LALT QUESTION         &kp SPACE             &kp ENTER  &kp K_CONTEXT_MENU
             >;
         };
 
         spaceIpad {
             bindings = <
-&none       &none      &none      &kp LC(LG(NUMBER_4))  &kp DEL            &none             &kp PLUS   &kp N7     &kp N8              &kp N9  &kp STAR   &none 
-&none   &kp LG(A)  &kp LG(X)  &kp LG(C)             &kp LG(V)          &none             &kp MINUS  &kp N4     &kp N5              &kp N6  &kp SLASH  &none 
-&none        &kp LG(Z)  &none      &kp LA(BACKSPACE)     &kp LG(H)          &none             &kp N0     &kp N1     &kp N2              &kp N3  &kp EQUAL  &none 
-                                      &kp LGUI              &mt LALT QUESTION         &kp SPACE             &kp ENTER  &kp K_CONTEXT_MENU
+&none  &none      &none      &kp LC(LG(NUMBER_4))  &kp DEL            &none             &kp PLUS   &kp N7     &kp N8              &kp N9  &kp STAR   &none
+&none  &kp LG(A)  &kp LG(X)  &kp LG(C)             &kp LG(V)          &none             &kp MINUS  &kp N4     &kp N5              &kp N6  &kp SLASH  &none
+&none  &kp LG(Z)  &none      &kp LA(BACKSPACE)     &kp LG(H)          &none             &kp N0     &kp N1     &kp N2              &kp N3  &kp EQUAL  &none
+                             &kp LGUI              &mt LALT QUESTION         &kp SPACE             &kp ENTER  &kp K_CONTEXT_MENU
             >;
         };
 
         introLayer {
             bindings = <
-&none       &none  &none  &none     &none              &none             &kp C_VOL_UP  &kp PG_UP   &kp UP              &kp PG_DN   &kp C_MUTE  &none 
-&none   &none  &none  &none     &none              &none             &kp HOME      &kp LEFT    &kp DOWN            &kp RIGHT   &kp END     &none 
-&none        &none  &none  &none     &none              &none             &kp C_VOL_DN  &kp C_PREV  &kp C_PLAY          &kp C_NEXT  &kp RCTRL   &kp RSHIFT
-                              &kp LGUI  &mt LALT QUESTION         &kp SPACE                &kp ENTER   &kp K_CONTEXT_MENU
+&none  &none  &none  &none     &none              &none             &kp C_VOL_UP  &kp PG_UP   &kp UP              &kp PG_DN   &kp C_MUTE  &none
+&none  &none  &none  &none     &none              &none             &kp HOME      &kp LEFT    &kp DOWN            &kp RIGHT   &kp END     &none
+&none  &none  &none  &none     &none              &none             &kp C_VOL_DN  &kp C_PREV  &kp C_PLAY          &kp C_NEXT  &kp RCTRL   &none
+                     &kp LGUI  &mt LALT QUESTION         &kp SPACE                &kp ENTER   &kp K_CONTEXT_MENU
             >;
         };
 
         menuLayer {
             bindings = <
-&none              &kp EXCL   &kp AT    &kp HASH       &kp DLLR           &kp PRCNT             &kp PLUS   &kp GRAVE  &kp LPAR            &kp RPAR  &kp STAR   &none 
-&none   &kp CARET  &kp AMPS  &kp BACKSLASH  &none              &none                 &kp MINUS  &kp TILDE  &kp LBKT            &kp RBKT  &kp SLASH  &none 
-&none            &none      &none     &none          &none              &none                 &kp PIPE   &kp UNDER  &kp LBRC            &kp RBRC  &kp EQUAL  &none 
-                                         &kp LGUI       &mt LALT QUESTION             &kp SPACE             &kp ENTER  &kp K_CONTEXT_MENU
+&none  &kp EXCL   &kp AT    &kp HASH       &kp DLLR           &kp PRCNT             &kp PLUS   &kp GRAVE  &kp LPAR            &kp RPAR  &kp STAR   &none
+&none  &kp CARET  &kp AMPS  &kp BACKSLASH  &none              &none                 &kp MINUS  &kp TILDE  &kp LBKT            &kp RBKT  &kp SLASH  &none
+&none  &none      &none     &none          &none              &none                 &kp PIPE   &kp UNDER  &kp LBRC            &kp RBRC  &kp EQUAL  &none
+                            &kp LGUI       &mt LALT QUESTION             &kp SPACE             &kp ENTER  &kp K_CONTEXT_MENU
             >;
         };
 
         escLayer {
             bindings = <
-&none           &kp F1  &kp F2   &kp F3    &kp F4             &mo 6             &none  &none      &none               &none  &none  &none
-&mt LSHIFT TAB  &kp F5  &kp F6   &kp F7    &kp F8             &none             &none  &none      &none               &none  &none  &none
-&kp LCTRL       &kp F9  &kp F10  &kp F11   &kp F12            &none             &none  &none      &none               &none  &none  &none
-                                 &kp LGUI  &mt LALT QUESTION         &kp SPACE         &kp ENTER  &kp K_CONTEXT_MENU
+&none  &kp F1  &kp F2   &kp F3    &kp F4             &mo 6             &none  &none      &none               &none  &none  &none
+&none  &kp F5  &kp F6   &kp F7    &kp F8             &none             &none  &none      &none               &none  &none  &none
+&none  &kp F9  &kp F10  &kp F11   &kp F12            &none             &none  &none      &none               &none  &none  &none
+                        &kp LGUI  &mt LALT QUESTION         &kp SPACE         &kp ENTER  &kp K_CONTEXT_MENU
             >;
         };
 
         adjustLayer {
             bindings = <
-&none  &none  &none  &none           &none  &none               &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &bt BT_CLR
-&none  &none  &none  &none           &none  &none               &none         &none         &none         &none         &none         &none
+&none  &none  &none  &none           &none  &none               &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &none
+&none  &none  &none  &none           &none  &none               &none         &none         &none         &none         &bt BT_CLR    &none
 &none  &none  &none  &none           &none  &none               &none         &none         &none         &none         &none         &none
                      &studio_unlock  &none         &bootloader                &none         &out OUT_TOG
             >;
