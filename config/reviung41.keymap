@@ -70,6 +70,22 @@
             require-prior-idle-ms = <100>;
             layers = <0 5 3 4>;
         };
+
+        quote {
+            bindings = <&kp SINGLE_QUOTE>;
+            key-positions = <8 9>;
+            timeout-ms = <40>;
+            require-prior-idle-ms = <100>;
+            layers = <0 5 3 4>;
+        };
+
+        question {
+            bindings = <&kp QUESTION>;
+            key-positions = <32 33>;
+            timeout-ms = <40>;
+            require-prior-idle-ms = <100>;
+            layers = <0 5 3 4>;
+        };
     };
 
     behaviors {
