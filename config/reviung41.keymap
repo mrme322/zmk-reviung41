@@ -89,6 +89,14 @@
             require-prior-idle-ms = <100>;
             layers = <0>;
         };
+
+        adj {
+            bindings = <&mo 5>;
+            key-positions = <1 5>;
+            timeout-ms = <200>;
+            require-prior-idle-ms = <100>;
+            layers = <0>;
+        };
     };
 
     behaviors {
