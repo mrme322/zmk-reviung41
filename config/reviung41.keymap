@@ -22,9 +22,34 @@
             bindings = <&sk LEFT_SHIFT>;
             key-positions = <37 39>;
         };
+
         delL {
             bindings = <&kp DELETE>;
             key-positions = <4 3>;
+            timeout-ms = <40>;
+            require-prior-idle-ms = <100>;
+            layers = <0 5 3 4>;
+        };
+
+        delR {
+            bindings = <&kp DELETE>;
+            key-positions = <7 8>;
+            timeout-ms = <40>;
+            require-prior-idle-ms = <100>;
+            layers = <0 5 3 4>;
+        };
+
+        BSL {
+            bindings = <&kp BACKSPACE>;
+            key-positions = <4 3>;
+            timeout-ms = <40>;
+            require-prior-idle-ms = <100>;
+            layers = <0 5 3 4>;
+        };
+
+        BSR {
+            bindings = <&kp BACKSPACE>;
+            key-positions = <7 8>;
             timeout-ms = <40>;
             require-prior-idle-ms = <100>;
             layers = <0 5 3 4>;
