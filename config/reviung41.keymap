@@ -28,7 +28,6 @@
             key-positions = <4 3>;
             timeout-ms = <40>;
             require-prior-idle-ms = <100>;
-            layers = <0 4 2 3>;
         };
 
         delR {
@@ -36,7 +35,6 @@
             key-positions = <7 8>;
             timeout-ms = <40>;
             require-prior-idle-ms = <100>;
-            layers = <0 4 2 3>;
         };
 
         BSL {
@@ -44,7 +42,6 @@
             key-positions = <15 16>;
             timeout-ms = <40>;
             require-prior-idle-ms = <100>;
-            layers = <0 4 2 3>;
         };
 
         BSR {
@@ -52,7 +49,6 @@
             key-positions = <19 20>;
             timeout-ms = <40>;
             require-prior-idle-ms = <100>;
-            layers = <0 4 2 3>;
         };
 
         ctrl+BS {
