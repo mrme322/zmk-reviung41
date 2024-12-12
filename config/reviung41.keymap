@@ -197,8 +197,8 @@
         sym {
             bindings = <
 &none  &kp EXCL   &kp AT    &kp HASH       &kp DLLR           &kp PRCNT             &kp PLUS   &kp GRAVE  &kp LPAR            &kp RPAR  &kp STAR   &none
-&none  &kp CARET  &kp AMPS  &kp BACKSLASH  &none              &none                 &kp MINUS  &kp TILDE  &kp LBKT            &kp RBKT  &kp SLASH  &none
-&none  &none      &none     &none          &none              &none                 &kp PIPE   &kp UNDER  &kp LBRC            &kp RBRC  &kp EQUAL  &none
+&none  &kp LEFT_GUI  &kp LALT  &kp LCTRL          &kp LSHFT              &none                 &kp MINUS  &kp TILDE  &kp LBKT            &kp RBKT  &kp SLASH  &none
+&none &kp CARET  &kp AMPS  &kp BACKSLASH          &none              &none                 &kp PIPE   &kp UNDER  &kp LBRC            &kp RBRC  &kp EQUAL  &none
                             &kp LGUI       &mt LALT QUESTION             &kp SPACE             &kp ENTER  &kp K_CONTEXT_MENU
             >;
         };
